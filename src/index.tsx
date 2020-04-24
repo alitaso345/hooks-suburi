@@ -1,10 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Root from './components/index'
 
-function App () {
-  return (
-    <div>hello</div>
-  )
-}
-
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Root />, document.getElementById('root'))
