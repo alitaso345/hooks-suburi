@@ -14,7 +14,7 @@ type State = {
   transformX: number
   transformY: number
   transformScale: number
-  transformDuration: number
+  transitionDuration: number
   effectDuration: number
 }
 
@@ -27,7 +27,7 @@ const defaultState = (): State => ({
   transformX: 0,
   transformY: 0,
   transformScale: 1,
-  transformDuration: 0,
+  transitionDuration: 0,
   effectDuration: 1000
 })
 
@@ -53,9 +53,9 @@ function useRippleEffect(props: Props) {
     () => ({
       opacity: state.opacity,
       transform: `${tx} ${ty} ${ts}`,
-      transformDuration: `${state.transformDuration / 1000}s`
+      transitionDuration: `${state.transitionDuration / 1000}s`
     }),
-    [state.opacity, tx, ty, ts, state.transformDuration]
+    [state.opacity, tx, ty, ts, state.transitionDuration]
   )
 
   const handleMouseDown = useCallback(
@@ -76,7 +76,7 @@ function useRippleEffect(props: Props) {
           transformX,
           transformY,
           transformScale: 0,
-          transformDuration: 0
+          transitionDuration: 0
         }
       })
     },
@@ -90,7 +90,7 @@ function useRippleEffect(props: Props) {
         ..._state,
         opacity: 0,
         transformScale: 1,
-        transformDuration: _state.effectDuration
+        transitionDuration: _state.effectDuration
       }))
     },
     []
