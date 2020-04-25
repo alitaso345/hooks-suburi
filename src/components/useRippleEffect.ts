@@ -35,12 +35,12 @@ function useRippleEffect(props: Props) {
   const [state, update] = useState<State>(merge(defaultState(), { ...props }))
 
   const tx = useMemo(
-    () => `translateX(${state.transformX})px`,
+    () => `translateX(${state.transformX}px)`,
     [state.transformX]
   )
 
   const ty = useMemo(
-    () => `translateY(${state.transformY})px`,
+    () => `translateY(${state.transformY}px)`,
     [state.transformY]
   )
 
