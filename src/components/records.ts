@@ -22,5 +22,5 @@ const records: Record[] = [
   { title: 'Config 5', checked: true }
 ]
 
-// @ts-ignore
+// @ts-ignorex
 export { Record, records }

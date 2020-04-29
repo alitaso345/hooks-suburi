@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { records } from './records'
+import ToggleSwitch from './toggleSwitch'
 
 type Props = { className?: string }
 
@@ -9,6 +10,10 @@ const View: React.FC<Props> = props => (
     {records.map((record, index) => (
       <div key={index} className="item">
         <span>{record.title}</span>
+        <ToggleSwitch
+          defaultChecked={record.checked}
+          activeColor={record.activeColor}
+        />
       </div>
     ))}
   </div>
